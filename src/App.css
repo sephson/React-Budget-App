@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  background-color: #dddddd;
+  height: 90vh;
+  width: 60rem;
+  border-radius: 0.5rem;
+  margin: auto;
+  margin-top: 2rem;
+  color: #30475e;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.mid_side {
+  margin-top: 2rem;
+}
+.right_side {
+  margin-top: 2rem;
+}
+.balance_field {
+  padding-top: 3rem;
+  padding-left: 2rem;
+}
+.balance {
+  font-size: 2.5rem;
+}
+
+.income_exp {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+
+  text-align: center;
+}
+
+.income {
+  background-color: rgba(255, 255, 255, 0.822);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.expense-side {
+  background-color: rgba(255, 255, 255, 0.822);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #e94b4b;
+}
+
+input {
+  display: block;
+}
+.add-trans {
+  padding: 2rem;
+}
+.income-text {
+  width: 17rem;
+  padding: 0.4rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom-color: #30475e;
+
+  outline: none;
+  background-color: #dddddd;
+  color: #30475e;
+  margin-bottom: 1rem;
+}
+
+.expense-text {
+  width: 17rem;
+  padding: 0.4rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom-color: #e94b4b;
+
+  outline: none;
+  background-color: #dddddd;
+  color: #e94b4b;
+  margin-bottom: 1rem;
+}
+
+.income-amt {
+  width: 17rem;
+  padding: 0.4rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom-color: #30475e;
+
+  outline: none;
+  background-color: #dddddd;
+  color: #30475e;
+  margin-bottom: 1.5rem;
+}
+
+.expense-amt {
+  width: 17rem;
+  padding: 0.4rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom-color: #e94b4b;
+
+  outline: none;
+  background-color: #dddddd;
+  color: #e94b4b;
+  margin-bottom: 1.5rem;
+}
+.income-btn {
+  background-color: #30475e;
+  color: rgba(255, 255, 255, 0.822);
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.expense-btn {
+  background-color: #e94b4b;
+  color: rgba(255, 255, 255, 0.822);
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+.income-btn:hover {
+  background-color: #000000;
+}
+.expense-btn:hover {
+  background-color: #000000;
+}
+
+.income-head {
+  margin-bottom: 2rem;
+}
+
+.expense-head {
+  color: #e94b4b;
+  margin-bottom: 2rem;
+}
+
+.left_side {
+  margin-top: 1rem;
+}
+
+.addtrans {
+  display: flex;
+}
+
+li {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.income-list {
+  padding-left: 2rem;
+}
+
+.expense-list {
+  padding-left: 2rem;
+  color: #e94b4b;
+}
+
+.trans-list {
+  display: flex;
+  flex-direction: row;
+  gap: 8rem;
+}
+
+.del-btn {
+  margin-left: 7rem;
+}
