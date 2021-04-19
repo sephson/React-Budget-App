@@ -1,67 +1,70 @@
-import React, { createContext, useReducer } from "react";
+import React, { useReducer } from "react";
+import GlobalContext from "./GlobalContext";
 import AppReducer from "./AppReducer";
-const InitialState = {
-  incomeTransactions: [
-    {
-      id: 1,
-      incomeText: "Salary",
-      incomeAmt: 2000,
-    },
 
-    {
-      id: 2,
-      incomeText: "Gifts",
-      incomeAmt: 5000,
-    },
-    {
-      id: 3,
-      incomeText: "Wages",
-      incomeAmt: 700,
-    },
-  ],
-
-  expenseTransactions: [
-    {
-      id: 1,
-      expenseText: "Shopping",
-      expenseAmt: 1500,
-    },
-    {
-      id: 2,
-      expenseText: "Eating out",
-      expenseAmt: 900,
-    },
-    {
-      id: 3,
-      expenseText: "Rent",
-      expenseAmt: 2500,
-    },
-  ],
-};
-
-const GlobalContext = createContext(InitialState);
-
-export const GlobalContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(AppReducer, InitialState);
-
-  const addIncome = (incomeTransaction) => {
-    dispatch({
-      type: "ADD_INCOME",
-      payload: incomeTransaction,
-    });
+function GlobalState({ children }) {
+  const initialState = {
+    incomeTransactions: [],
+    expenseTransactions: [],
   };
+
+  const [state, dispatch] = useReducer(AppReducer, initialState);
+
+  const submitIncome = (incomeTransactions) => {
+    dispatch({ type: "SUBMIT_INCOME", payload: incomeTransactions });
+  };
+
+  const submitExpenses = (expenseTransactions) => {
+    dispatch({ type: "SUBMIT_EXPENSE", payload: expenseTransactions });
+  };
+
+  const deleteIncome = (id) => {
+    dispatch({ type: "DELETE_INCOME", payload: id });
+  };
+
+  const deleteExpense = (id) => {
+    dispatch({ type: "DELETE_EXPENSE", payload: id });
+  };
+
+  const listOfIncomeAmount = state.incomeTransactions.map(
+    (incomeTransaction) => incomeTransaction.incomeAmount
+  );
+
+  // console.log(listOfIncomeAmount);
+
+  const listOfExpenseAmount = state.expenseTransactions.map(
+    (expenseTransaction) => {
+      return expenseTransaction.expenseAmount;
+    }
+  );
+
+  //   const array1 = [1, 2, 3, 4]
+  // const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  // console.log(array1.reduce(reducer));
+
+  const totalIncome = (acc, currentVal) => acc + currentVal;
+  // console.log(listOfIncomeAmount.reduce(totalIncome, 0));
+  const netIncome = listOfIncomeAmount.reduce(totalIncome, 0);
+
+  const totalExpense = (acc, currentVal) => acc + currentVal;
+  const expenditure = listOfExpenseAmount.reduce(totalExpense, 0);
 
   return (
     <GlobalContext.Provider
       value={{
         incomeTransactions: state.incomeTransactions,
         expenseTransactions: state.expenseTransactions,
-        addIncome,
+        submitIncome,
+        submitExpenses,
+        deleteIncome,
+        deleteExpense,
+        netIncome,
+        expenditure,
       }}
     >
       {children}
     </GlobalContext.Provider>
   );
-};
+}
 
-export default GlobalContext;
+export default GlobalState;

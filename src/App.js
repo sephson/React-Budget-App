@@ -5,25 +5,28 @@ import AddTrans from "./components/AddTrans";
 import IncomeList from "./components/IncomeList";
 import Expense from "./components/Expense";
 import "./App.css";
-import { GlobalContextProvider } from "./context/GlobalState";
+import GlobalState from "./context/GlobalState";
 
 function App() {
   return (
-    <div className="App">
-      <GlobalContextProvider>
-        <div className="left_side">
-          <Balance />
-          <InExp />
-        </div>
-        <div className="mid_side">
-          <AddTrans />
-          <div className="trans-list">
-            <IncomeList />
-            <Expense />
+    <main>
+      <h1 className="oga">Expense Tracker</h1>
+      <div className="App">
+        <GlobalState>
+          <div className="left_side">
+            <Balance />
+            <InExp />
           </div>
-        </div>
-      </GlobalContextProvider>
-    </div>
+          <div className="mid_side">
+            <AddTrans />
+            <div className="trans-list">
+              <IncomeList />
+              <Expense />
+            </div>
+          </div>
+        </GlobalState>
+      </div>
+    </main>
   );
 }
 

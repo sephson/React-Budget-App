@@ -5,14 +5,24 @@
   box-sizing: border-box;
 }
 
+main {
+  color: #30475e;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #dddddd;
+}
+
+.oga {
+  padding: 2rem 0 0 2rem;
+}
+
 .App {
   display: flex;
+  height: 100%;
+  width: 100%;
   background-color: #dddddd;
-  height: 90vh;
-  width: 60rem;
   border-radius: 0.5rem;
-  margin: auto;
-  margin-top: 2rem;
+
+  padding-bottom: 3rem;
   color: #30475e;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
@@ -154,9 +164,22 @@ input {
   display: flex;
 }
 
+li.ins {
+  background-color: #30475e;
+}
+
+li.expexp {
+  background-color: #e94b4b;
+}
+
 li {
   list-style: none;
   margin-top: 1rem;
+
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  color: white;
+  font-size: large;
 }
 
 .income-list {
@@ -164,7 +187,7 @@ li {
 }
 
 .expense-list {
-  padding-left: 2rem;
+  /* padding-left: 2rem; */
   color: #e94b4b;
 }
 
@@ -175,5 +198,42 @@ li {
 }
 
 .del-btn {
-  margin-left: 7rem;
+  padding: 0.3rem;
+  background-color: steelblue;
+  border-radius: 0.5rem;
+  color: aliceblue;
+  border: none;
+  margin-left: 5rem;
+}
+.income-list-items {
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 980px) {
+  .App {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: #dddddd;
+    border-radius: 0.5rem;
+
+    padding-bottom: 3rem;
+    color: #30475e;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .addtrans {
+    display: block;
+  }
+  .trans-list {
+    display: block;
+    margin: 0 2rem 0 2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .left_side {
+    margin-top: -1rem;
+  }
 }
